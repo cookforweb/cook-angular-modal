@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {AngularmodalService} from '../../projects/angularmodal/src/lib/angularmodal.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'cook-angular-modal';
+
+  constructor(public modalService: AngularmodalService){}
 }
