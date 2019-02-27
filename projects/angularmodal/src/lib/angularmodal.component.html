@@ -1,0 +1,14 @@
+<div class="modalbox-wrapper" [ngClass]="{'active' : isActive }">
+    <div class="modalbox-overlay" (click)="doCloseModal()"></div>
+    <div class="modalbox-content" [ngClass]="$options.size">
+        <div class="modalbox-header">
+            <div class="modalbox-title" *ngIf="$options.title">
+                {{ $options.title }}
+            </div>
+            <button class="modalbox-close" (click)="doCloseModal()">CLOSE</button>
+        </div>
+        <div class="modalbox-body">
+            <ng-content></ng-content>
+        </div>
+    </div>
+</div>

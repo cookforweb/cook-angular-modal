@@ -16,6 +16,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "angularmodal": [
+        "dist/angularmodal"
+      ],
+      "angularmodal/*": [
+        "dist/angularmodal/*"
+      ]
+    }
   }
 }
