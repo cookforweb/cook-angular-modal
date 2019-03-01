@@ -1,5 +1,5 @@
 {
-  "name": "angularmodal",
+  "name": "@cookforweb/angularmodal",
   "version": "0.1.0",
   "peerDependencies": {
     "@angular/common": "^7.0.0",
