@@ -1,6 +1,8 @@
 import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
-import {AngularmodalService} from './angularmodal.service';
+import {AngularmodalService} from '../services/angularmodal.service';
 import {Subscription} from 'rxjs';
+import {AngularmodalConfig} from '../models/angularmodal-config.model';
+import {AngularmodalHandlerService} from '../services/angularmodal-handler.service';
 
 @Component({
   selector: 'cook-angularmodal',
@@ -12,8 +14,11 @@ export class AngularmodalComponent implements OnInit, OnDestroy {
     @Input() id;
     @Input() size;
     @Input() title;
-    // @Input() isActive;
-    // @Output() doInactive = new EventEmitter<boolean>();
+
+    /**
+     * Notifier configuration
+     */
+    public readonly config: AngularmodalConfig;
 
     isActive = false;
 
@@ -23,14 +28,14 @@ export class AngularmodalComponent implements OnInit, OnDestroy {
 
     constructor(
         private modalService: AngularmodalService,
+        angularmodalHandlerService: AngularmodalHandlerService
     ) {
+        this.config = angularmodalHandlerService.getConfig();
     }
 
     ngOnInit() {
 
-        if (!this.id) {
-
-        }
+        if (!this.id) {}
 
         this.$options = {
             id: this.id,
@@ -40,7 +45,6 @@ export class AngularmodalComponent implements OnInit, OnDestroy {
 
         this.modalRef = this.modalService.modal$.subscribe(
             (value) => {
-                console.log(this.id);
                 if (value.field === this.id){
                     this.isActive = value.active;
                 }

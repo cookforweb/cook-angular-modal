@@ -2,7 +2,6 @@ $fade_duration: 400ms;
 
 
 .modalbox-wrapper {
-  font-family: sans-serif;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -44,12 +43,10 @@ $fade_duration: 400ms;
     .modalbox-header {
       padding: 1rem;
       border-bottom: 1px solid rgba(197, 197, 197, 0.84);
-      background-color: #2f3542;
       min-height: 18px;
       .modalbox-title {
         color: #ffffff;
         font-weight: 700;
-        text-transform: uppercase;
         letter-spacing: 0.05rem;
       }
       > button.modalbox-close {

@@ -1,7 +1,7 @@
 <div class="modalbox-wrapper" [ngClass]="{'active' : isActive }">
     <div class="modalbox-overlay" (click)="doCloseModal()"></div>
     <div class="modalbox-content" [ngClass]="$options.size">
-        <div class="modalbox-header">
+        <div class="modalbox-header" [style.background-color]="config.colors.titleBackground">
             <div class="modalbox-title" *ngIf="$options.title">
                 {{ $options.title }}
             </div>

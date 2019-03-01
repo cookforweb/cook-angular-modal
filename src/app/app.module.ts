@@ -1,9 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {InjectionToken, NgModule} from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {AngularmodalModule} from '../../projects/angularmodal/src/lib/angularmodal.module';
+import {AngularmodalOptions} from '../../projects/angularmodal/src/lib/models/angularmodal-options.model';
+
+const modalOptions: AngularmodalOptions = {
+  colors: {
+    titleBackground: '#aaa69d',
+  }
+};
 
 @NgModule({
   declarations: [
@@ -12,7 +19,7 @@ import {AngularmodalModule} from '../../projects/angularmodal/src/lib/angularmod
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularmodalModule,
+    AngularmodalModule.withConfig( modalOptions ),
   ],
   providers: [],
   bootstrap: [AppComponent]
