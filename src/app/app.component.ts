@@ -9,7 +9,7 @@ import {AngularmodalService} from '../../projects/angularmodal/src/lib/services/
 export class AppComponent {
   title = 'cook-angular-modal';
 
-  constructor(public modalService: AngularmodalService){}
+  constructor(public modalService: AngularmodalService) {}
 
   openModal($field){
     this.modalService.open($field);
