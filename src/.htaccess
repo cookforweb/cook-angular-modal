@@ -1,6 +1,6 @@
 <IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteBase /labs/demos/cook-angular-modal/dist/cook-angular-modal/
+RewriteBase /
 Options +FollowSymLinks
 
 RewriteCond %{REQUEST_FILENAME} !-f
